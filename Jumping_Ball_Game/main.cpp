@@ -7,8 +7,11 @@
 int main()
 {
 	srand(time(NULL));
-	RenderWindow window(VideoMode(W_Width, W_Height), "test", Style::Close);
-	init_shapes();
+	RenderWindow window(VideoMode(Window_Width, W_Height), "test", Style::Close);
+	flappy.loadFromFile("Fonts/flappy.ttf");
+	arial.loadFromFile("Fonts/font.ttf");
+	set_window();
+	init_texts();
 
 	while (window.isOpen())
 	{
@@ -29,8 +32,16 @@ int main()
 			}
 		}
 
+		std::stringstream s;
+		s << score;
+		score_number.setString(s.str());
+
+		if (game_state == 0 && executed == false)
+			start();
+
 		if (game_state == 1)
 		{
+			executed = false;
 			update_tiles();
 			update_position();
 			ball.setPosition(x, y);
@@ -39,16 +50,13 @@ int main()
 
 
 		window.clear();
-		if (game_state != 2)
-		{
+
+		draw_texts(window);
+		
 			draw_player(window);
 			draw_tiles(window);
-		}
-		if (game_state == 2)
-		{
-			init_shapes();
-			window.clear();
-		}
+			draw_window(window);
+
 		window.display();
 	}
 }

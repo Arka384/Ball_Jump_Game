@@ -1,5 +1,5 @@
 ﻿  main.cpp
-c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\updates.h(70): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(45): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\updates.h(75): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\main.cpp(9): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Jumping_Ball_Game.vcxproj -> C:\Users\arkad\Documents\DEADSHOT FILES\C++ Programs\SFML\Projects\Jumping_Ball_Game\Debug\Jumping_Ball_Game.exe

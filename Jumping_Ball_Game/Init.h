@@ -2,6 +2,46 @@
 
 #include "Depends.h"
 
+void set_window(void)
+{
+	line.setFillColor(Color::White);
+	line.setSize(Vector2f(10, W_Height));
+	line.setPosition(W_Width, 0);
+}
+
+void init_texts(void)
+{
+	tip_1.setFont(arial);
+	tip_1.setCharacterSize(24);
+	tip_1.setFillColor(Color::White);
+	tip_2.setFont(arial);
+	tip_2.setCharacterSize(24);
+	tip_2.setFillColor(Color::White);
+	tip.setFont(flappy);
+	tip.setCharacterSize(35);
+	tip.setFillColor(Color::Yellow);
+	score_text.setFont(flappy);
+	score_text.setCharacterSize(40);
+	score_text.setFillColor(Color::Yellow);
+	score_number.setFont(flappy);
+	score_number.setCharacterSize(40);
+	score_number.setFillColor(Color(173, 255, 47, 255));
+	score_number.setString("0");
+
+	score_text.setString("SCORE-");
+	tip.setString("Tip: ");
+	tip_1.setString("Jump first and then");
+	tip_2.setString("Change Your Direction");
+
+	tip.setPosition(W_Width + 20, W_Height - 200);
+	tip_1.setPosition(W_Width + 20, W_Height - 150);
+	tip_2.setPosition(W_Width + 20, W_Height - 120);
+	score_text.setPosition(W_Width + 20, 10);
+	score_number.setPosition(W_Width + 180, 10);
+
+
+}
+
 void init_shapes(void)
 {
 	//this will init shapes for the first time only
@@ -26,5 +66,19 @@ void init_shapes(void)
 		tiles[i].setFillColor(Color::White);
 		tiles[i].setPosition(px, py);
 	}
+}
+
+void start(void)
+{
+	last_tile_y = W_Height - 50;
+	x = W_Width / 2 - ball_size / 2, y = W_Height / 2 - ball_size / 2;
+	velocity_x = 0;
+	velocity_y = 0;
+	accleration_x = 0;
+	accleration_y = 0;
+	gravity = 200;
+	init_shapes();
+	score = 0;
+	executed = true;
 }
 

@@ -41,6 +41,9 @@ void update_position(void)
 		y = 0;
 		velocity_y = -(velocity_y + 100);
 	}
+
+	if (y > W_Height)
+		game_state = 2;
 }
 
 void update_movement(void)
@@ -53,6 +56,8 @@ void update_movement(void)
 	if (Keyboard::isKeyPressed(Keyboard::Enter))
 		if (game_state == 0)
 			game_state = 1;
+		else
+			game_state = 0;
 
 }
 
@@ -65,6 +70,8 @@ void update_tiles(void)
 	{
 		if (tiles[i].getPosition().y > W_Height)
 		{
+			score += 2;
+
 			last_tile_y += tile_gap_y;
 			float px, py;
 			px = rand() % W_Width;
@@ -75,14 +82,4 @@ void update_tiles(void)
 			tiles[i].setPosition(px, py);
 		}
 	}
-}
-
-
-void restart(void)
-{
-	tile_gap_y = 150;
-	last_tile_y = W_Height - 50;
-	x = W_Width / 2 - ball_size / 2;
-	y = W_Height / 2 - ball_size / 2;
-	game_state = 2;
 }
