@@ -14,7 +14,7 @@ constexpr int tile_height = 20;
 constexpr int n_tiles = 10;
 RectangleShape tiles[n_tiles];
 RectangleShape line;
-float tile_gap_y = 150;
+float tile_gap_y = 200;
 float last_tile_y = W_Height - 50;
 bool executed = false;
 int score = 0;
@@ -25,14 +25,13 @@ int game_state = 0;
 	//then again 0
 
 //Player variables
-float ball_size = 40.f;
-float x = W_Width / 2 - ball_size / 2, y = W_Height / 2 - ball_size / 2;
+float doodle_w, doodle_h;
+float x, y;
 float velocity_x = 0;
 float velocity_y = 0;
 float accleration_x = 0;
 float accleration_y = 0;
 float gravity = 200;
-CircleShape ball;
 
 //other 
 Clock cl;
@@ -45,8 +44,8 @@ Text menu[4];
 Font flappy, arial;
 
 //textrures
-Texture background, doodle, bottom;
-Sprite Background, Bottom;
+Texture background, doodle, doodle_2, bottom, platform;
+Sprite Background, Bottom, Doodle;
 
 
 void init_shapes(void);

@@ -67,14 +67,22 @@ void init_sprites(void)
 	Bottom.setTexture(bottom);
 	Bottom.setScale(Vector2f(2.03, 1));
 	Bottom.setPosition(0, W_Height - 30);
+
+	doodle.loadFromFile("Images/doodle_left.png");
+	Doodle.setTexture(doodle);
+	doodle_2.loadFromFile("Images/doodle_right.png");
+	platform.loadFromFile("Images/platform.png");
 }
 
 void init_shapes(void)
 {
 	//this will init shapes for the first time only
-	ball.setRadius(ball_size/2);
-	ball.setFillColor(Color::Red);
-	ball.setPosition(x, y);
+
+	doodle_w = Doodle.getGlobalBounds().width;
+	doodle_h = Doodle.getGlobalBounds().height;
+	x = W_Width / 2 - doodle_w / 2;
+	y = W_Height / 2 - doodle_h / 2;
+	Doodle.setPosition(x, y);
 
 	for (int i = 0; i < n_tiles; i++)
 	{
@@ -90,7 +98,8 @@ void init_shapes(void)
 		if (px > W_Width - tile_width)
 			px -= tile_width;
 		tiles[i].setSize(Vector2f(tile_width, tile_height));
-		tiles[i].setFillColor(Color::Green);
+		//tiles[i].setFillColor(Color::Green);
+		tiles[i].setTexture(&platform);
 		tiles[i].setPosition(px, py);
 	}
 }
@@ -98,7 +107,7 @@ void init_shapes(void)
 void start(void)
 {
 	last_tile_y = W_Height - 50;
-	x = W_Width / 2 - ball_size / 2, y = W_Height / 2 - ball_size / 2;
+	x = W_Width / 2 - doodle_w / 2, y = W_Height / 2 - doodle_h / 2;
 	velocity_x = 0;
 	velocity_y = 0;
 	accleration_x = 0;

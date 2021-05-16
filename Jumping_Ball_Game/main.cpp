@@ -47,7 +47,7 @@ int main()
 			executed = false;
 			update_tiles();
 			update_position();
-			ball.setPosition(x, y);
+			Doodle.setPosition(x, y);
 		}
 		
 

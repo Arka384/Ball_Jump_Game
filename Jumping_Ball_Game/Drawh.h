@@ -9,7 +9,7 @@ void draw_tiles(RenderWindow &thisWindow)
 
 void draw_player(RenderWindow &thisWindow)
 {
-	thisWindow.draw(ball);
+	thisWindow.draw(Doodle);
 }
 
 void draw_window(RenderWindow &thisWindow)
@@ -21,6 +21,7 @@ void draw_sprites(RenderWindow &thisWindow)
 {
 	thisWindow.draw(Background);
 	thisWindow.draw(Bottom);
+	thisWindow.draw(Doodle);
 }
 
 void draw_texts(RenderWindow &thisWindow)

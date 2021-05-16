@@ -10,8 +10,8 @@ void update_position(void)
 		float tile_x = tiles[i].getPosition().x;
 		float tile_y = tiles[i].getPosition().y;
 
-		if (y + ball_size >= tile_y && y + ball_size <= tile_y + tile_height/2 &&
-			x + ball_size >= tile_x && x <= tile_x + tile_width)
+		if (y + doodle_h >= tile_y && y + doodle_h <= tile_y + tile_height/2 &&
+			x + doodle_w >= tile_x && x + 50 <= tile_x + tile_width)
 		{
 			velocity_x = 0;
 			velocity_y = 0;
@@ -34,9 +34,9 @@ void update_position(void)
 		x = 0;
 		velocity_x = -(velocity_x + 300);
 	}
-	if (x > W_Width-ball_size)
+	if (x > W_Width - doodle_w)
 	{
-		x = W_Width - ball_size;
+		x = W_Width - doodle_w;
 		velocity_x = -(velocity_x - 300);
 	}
 	if (y < 0)
@@ -52,9 +52,15 @@ void update_position(void)
 void update_movement(void)
 {
 	if (Keyboard::isKeyPressed(Keyboard::Right))
+	{
+		Doodle.setTexture(doodle_2);
 		velocity_x = 400;
+	}
 	if (Keyboard::isKeyPressed(Keyboard::Left))
+	{
+		Doodle.setTexture(doodle);
 		velocity_x = -400;
+	}
 
 	if (Keyboard::isKeyPressed(Keyboard::Enter))
 		if (game_state == 0)
@@ -67,7 +73,7 @@ void update_movement(void)
 void update_tiles(void)
 {
 	for (int i = 0; i < n_tiles; i++)
-		tiles[i].move(0, 80 * dt);
+		tiles[i].move(0, 100 * dt);
 
 	for (int i = 0; i < n_tiles; i++)
 	{
