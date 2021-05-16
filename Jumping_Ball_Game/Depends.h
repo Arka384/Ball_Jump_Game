@@ -10,6 +10,7 @@ constexpr int Window_Width = 950;
 constexpr int W_Width = 650;
 constexpr int W_Height = 900;
 constexpr int tile_width = 150;
+constexpr int tile_height = 20;
 constexpr int n_tiles = 10;
 RectangleShape tiles[n_tiles];
 RectangleShape line;
@@ -37,14 +38,22 @@ CircleShape ball;
 Clock cl;
 Time t;
 float dt;
-Text score_text, score_number, tip, tip_1, tip_2;
+Text score_text, score_number;
+Text tip, tips[4];
+Text over, next;
+Text menu[4];
 Font flappy, arial;
+
+//textrures
+Texture background, doodle, bottom;
+Sprite Background, Bottom;
 
 
 void init_shapes(void);
 void start(void);
 void set_window(void);
 void init_texts(void);
+void init_sprites(void);
 
 void update_position(void);
 void update_movement(void);
@@ -54,3 +63,4 @@ void draw_tiles(RenderWindow &);
 void draw_player(RenderWindow &);
 void draw_window(RenderWindow &);
 void draw_texts(RenderWindow &);
+void draw_sprites(RenderWindow &);

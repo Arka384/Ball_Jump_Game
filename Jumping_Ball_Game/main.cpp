@@ -3,6 +3,7 @@
 #include "Init.h"
 #include "Updates.h"
 #include "Drawh.h"
+#include "game.h"
 
 int main()
 {
@@ -10,7 +11,9 @@ int main()
 	RenderWindow window(VideoMode(Window_Width, W_Height), "test", Style::Close);
 	flappy.loadFromFile("Fonts/flappy.ttf");
 	arial.loadFromFile("Fonts/font.ttf");
+
 	set_window();
+	init_sprites();
 	init_texts();
 
 	while (window.isOpen())
@@ -51,11 +54,18 @@ int main()
 
 		window.clear();
 
+		draw_sprites(window);
+
 		draw_texts(window);
+		if (game_state == 2)
+		{
+			window.draw(next);
+			window.draw(over);
+		}
 		
-			draw_player(window);
-			draw_tiles(window);
-			draw_window(window);
+		draw_player(window);
+		draw_tiles(window);
+		draw_window(window);
 
 		window.display();
 	}

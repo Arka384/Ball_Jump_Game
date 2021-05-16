@@ -7,8 +7,11 @@ void update_position(void)
 	//updates for gravity
 	for (int i = 0; i < n_tiles; i++)
 	{
-		if (y + ball_size >= tiles[i].getPosition().y && y + ball_size <= tiles[i].getPosition().y + 5 &&
-			x + ball_size >= tiles[i].getPosition().x && x <= tiles[i].getPosition().x + tile_width)
+		float tile_x = tiles[i].getPosition().x;
+		float tile_y = tiles[i].getPosition().y;
+
+		if (y + ball_size >= tile_y && y + ball_size <= tile_y + tile_height/2 &&
+			x + ball_size >= tile_x && x <= tile_x + tile_width)
 		{
 			velocity_x = 0;
 			velocity_y = 0;
@@ -56,7 +59,7 @@ void update_movement(void)
 	if (Keyboard::isKeyPressed(Keyboard::Enter))
 		if (game_state == 0)
 			game_state = 1;
-		else
+		else if (game_state == 2)
 			game_state = 0;
 
 }

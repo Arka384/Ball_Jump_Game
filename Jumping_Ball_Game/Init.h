@@ -11,35 +11,62 @@ void set_window(void)
 
 void init_texts(void)
 {
-	tip_1.setFont(arial);
-	tip_1.setCharacterSize(24);
-	tip_1.setFillColor(Color::White);
-	tip_2.setFont(arial);
-	tip_2.setCharacterSize(24);
-	tip_2.setFillColor(Color::White);
+	for (int i = 0; i < 4; i++)
+	{
+		tips[i].setFont(arial);
+		tips[i].setCharacterSize(20);
+		tips[i].setFillColor(Color::White);
+	}
 	tip.setFont(flappy);
 	tip.setCharacterSize(35);
 	tip.setFillColor(Color::Yellow);
+
 	score_text.setFont(flappy);
 	score_text.setCharacterSize(40);
 	score_text.setFillColor(Color::Yellow);
 	score_number.setFont(flappy);
 	score_number.setCharacterSize(40);
-	score_number.setFillColor(Color(173, 255, 47, 255));
+	score_number.setFillColor(Color::White);
 	score_number.setString("0");
 
+	over.setFont(flappy);
+	over.setCharacterSize(50);
+	over.setFillColor(Color(255, 228, 196, 255));
+	next.setFont(flappy);
+	next.setCharacterSize(35);
+	next.setFillColor(Color(255, 228, 196, 255));
+
 	score_text.setString("SCORE-");
+	over.setString("Game Over!");
+	next.setString("Press Return");
 	tip.setString("Tip: ");
-	tip_1.setString("Jump first and then");
-	tip_2.setString("Change Your Direction");
+	tips[0].setString("Jump first and then");
+	tips[1].setString("change your direction");
+	tips[2].setString("Pressing arrow keys");
+	tips[3].setString("multiple times will help");
 
 	tip.setPosition(W_Width + 20, W_Height - 200);
-	tip_1.setPosition(W_Width + 20, W_Height - 150);
-	tip_2.setPosition(W_Width + 20, W_Height - 120);
+	tips[0].setPosition(W_Width + 20, W_Height - 150);
+	tips[1].setPosition(W_Width + 30, W_Height - 130);
+	tips[2].setPosition(W_Width + 20, W_Height - 90);
+	tips[3].setPosition(W_Width + 30, W_Height - 70);
 	score_text.setPosition(W_Width + 20, 10);
 	score_number.setPosition(W_Width + 180, 10);
+	over.setPosition(W_Width + 20, W_Height / 2 - 100);
+	next.setPosition(W_Width + 40, W_Height / 2 - 30);
 
+}
 
+void init_sprites(void)
+{
+	background.loadFromFile("Images/bck.png");
+	Background.setTexture(background);
+	Background.setScale(Vector2f(1.03, 1));
+
+	bottom.loadFromFile("Images/bottom.png");
+	Bottom.setTexture(bottom);
+	Bottom.setScale(Vector2f(2.03, 1));
+	Bottom.setPosition(0, W_Height - 30);
 }
 
 void init_shapes(void)
@@ -62,8 +89,8 @@ void init_shapes(void)
 		last_tile_y = py;
 		if (px > W_Width - tile_width)
 			px -= tile_width;
-		tiles[i].setSize(Vector2f(tile_width, 10));
-		tiles[i].setFillColor(Color::White);
+		tiles[i].setSize(Vector2f(tile_width, tile_height));
+		tiles[i].setFillColor(Color::Green);
 		tiles[i].setPosition(px, py);
 	}
 }
