@@ -6,16 +6,19 @@
 using namespace sf;
 
 //game variables
-constexpr int Window_Width = 950;
-constexpr int W_Width = 650;
-constexpr int W_Height = 900;
-constexpr int tile_width = 150;
+constexpr int Window_Width = 800;
+constexpr int W_Width = 500;
+constexpr int W_Height = 700;
+constexpr int tile_width = 80;
 constexpr int tile_height = 20;
-constexpr int n_tiles = 10;
+constexpr int n_tiles = 15;
 RectangleShape tiles[n_tiles];
 RectangleShape line;
-float tile_gap_y = 200;
+float tile_gap_y = 60;
+float tile_gap_x = 300;
 float last_tile_y = W_Height - 50;
+float last_tile_x;
+int move_speed = 120;
 bool executed = false;
 int score = 0;
 int game_state = 0;

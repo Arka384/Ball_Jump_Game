@@ -11,12 +11,10 @@ void update_position(void)
 		float tile_y = tiles[i].getPosition().y;
 
 		if (y + doodle_h >= tile_y && y + doodle_h <= tile_y + tile_height/2 &&
-			x + doodle_w >= tile_x && x + 50 <= tile_x + tile_width)
+			x + doodle_w - 10 >= tile_x && x + 10 <= tile_x + tile_width && velocity_y > 0)
 		{
 			velocity_x = 0;
-			velocity_y = 0;
-			if (Keyboard::isKeyPressed(Keyboard::Up))
-				velocity_y = -900;
+			velocity_y = -900;
 		}
 		else
 			velocity_y += gravity * dt;
@@ -72,8 +70,9 @@ void update_movement(void)
 
 void update_tiles(void)
 {
-	for (int i = 0; i < n_tiles; i++)
-		tiles[i].move(0, 100 * dt);
+	if (y < W_Height/2 - 100)
+		for (int i = 0; i < n_tiles; i++)
+			tiles[i].move(0, fabs(velocity_y) * dt);
 
 	for (int i = 0; i < n_tiles; i++)
 	{
@@ -82,12 +81,26 @@ void update_tiles(void)
 			score += 2;
 
 			last_tile_y += tile_gap_y;
-			float px, py;
-			px = rand() % W_Width;
+			int px, py;
+			int low = last_tile_x - tile_gap_x - tile_width;
+			int high = last_tile_x + tile_gap_x;
+
+			px = (rand() % (high - low + 1) + low);
 			py = last_tile_y - tile_gap_y;
 			last_tile_y = py;
+
 			if (px > W_Width - tile_width)
+			{
+				px = 0;
 				px -= tile_width;
+			}
+			else if (px < 0)
+			{
+				px = 0;
+				px += tile_width;
+			}
+
+			last_tile_x = px;
 			tiles[i].setPosition(px, py);
 		}
 	}

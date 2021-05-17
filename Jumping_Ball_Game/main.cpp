@@ -3,7 +3,6 @@
 #include "Init.h"
 #include "Updates.h"
 #include "Drawh.h"
-#include "game.h"
 
 int main()
 {
@@ -46,6 +45,7 @@ int main()
 		{
 			executed = false;
 			update_tiles();
+			//update_tile_speed();
 			update_position();
 			Doodle.setPosition(x, y);
 		}

@@ -134,7 +134,6 @@
   <ItemGroup>
     <ClInclude Include="Depends.h" />
     <ClInclude Include="Drawh.h" />
-    <ClInclude Include="game.h" />
     <ClInclude Include="Init.h" />
     <ClInclude Include="Updates.h" />
   </ItemGroup>

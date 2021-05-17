@@ -27,7 +27,7 @@ void draw_sprites(RenderWindow &thisWindow)
 void draw_texts(RenderWindow &thisWindow)
 {
 	thisWindow.draw(tip);
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < 2; i++)
 		thisWindow.draw(tips[i]);
 	thisWindow.draw(score_text);
 	thisWindow.draw(score_number);
