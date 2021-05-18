@@ -4,7 +4,7 @@
 
 void set_window(void)
 {
-	line.setFillColor(Color::White);
+	line.setFillColor(Color(139, 69, 19, 255));
 	line.setSize(Vector2f(10, W_Height));
 	line.setPosition(W_Width, 0);
 }
@@ -59,9 +59,9 @@ void init_texts(void)
 
 void init_sprites(void)
 {
-	background.loadFromFile("Images/bck.png");
+	background.loadFromFile("Images/bck_white.png");
 	Background.setTexture(background);
-	Background.setScale(Vector2f(0.78, 1));
+	Background.setScale(Vector2f(0.79, 1));
 
 	bottom.loadFromFile("Images/bottom.png");
 	Bottom.setTexture(bottom);
@@ -72,6 +72,33 @@ void init_sprites(void)
 	Doodle.setTexture(doodle);
 	doodle_2.loadFromFile("Images/doodle_right.png");
 	platform.loadFromFile("Images/platform.png");
+
+	//main menu sprites
+	main_menu.loadFromFile("Images/menu.jpg");
+	Menu.setTexture(main_menu);
+	play_b.loadFromFile("Images/play.png");
+	play_b.setSmooth(true);
+	Play.setTexture(play_b);
+	play_b_on.loadFromFile("Images/play-on.png");
+	play_b_on.setSmooth(true);
+	Play.setScale(Vector2f(1.5, 1.5));
+	Play.setPosition(W_Width/2 + 100, W_Height/2 - 80);
+	
+}
+
+void init_sounds(void)
+{
+	jump_sound.loadFromFile("Sounds/jump.wav");
+	jump.setBuffer(jump_sound);
+	jump.setVolume(100.f);
+
+	start_sound.loadFromFile("Sounds/start.wav");
+	s_start.setBuffer(start_sound);
+	s_start.setVolume(100.f);
+
+	fall_sound.loadFromFile("Sounds/pada.wav");
+	fall.setBuffer(fall_sound);
+	fall.setVolume(50.f);
 }
 
 void init_shapes(void)

@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include <iostream>
 #include <sstream>
 #include <time.h>
@@ -21,11 +22,11 @@ float last_tile_x;
 int move_speed = 120;
 bool executed = false;
 int score = 0;
-int game_state = 0;
+int game_state = 3;
 	//0 - start
 	//1 - running
 	//2 - over
-	//then again 0
+	//3 - main screen
 
 //Player variables
 float doodle_w, doodle_h;
@@ -45,10 +46,16 @@ Text tip, tips[4];
 Text over, next;
 Text menu[4];
 Font flappy, arial;
+float mx, my;
 
 //textrures
-Texture background, doodle, doodle_2, bottom, platform;
-Sprite Background, Bottom, Doodle;
+Texture background, doodle, doodle_2, bottom, platform, main_menu;
+Texture play_b, play_b_on, over_score_img;
+Sprite Background, Bottom, Doodle, Menu, Play, score_bck;
+
+//sounds
+SoundBuffer jump_sound, fall_sound, start_sound;
+Sound jump, fall, s_start;
 
 
 void init_shapes(void);
@@ -56,13 +63,16 @@ void start(void);
 void set_window(void);
 void init_texts(void);
 void init_sprites(void);
+void init_sounds(void);
 
 void update_position(void);
 void update_movement(void);
 void update_tiles(void);
+void update_mouse_menu(void);
 
 void draw_tiles(RenderWindow &);
 void draw_player(RenderWindow &);
 void draw_window(RenderWindow &);
 void draw_texts(RenderWindow &);
 void draw_sprites(RenderWindow &);
+void draw_menu_screen(RenderWindow &);

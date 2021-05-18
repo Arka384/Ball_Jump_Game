@@ -11,9 +11,10 @@ void update_position(void)
 		float tile_y = tiles[i].getPosition().y;
 
 		if (y + doodle_h >= tile_y && y + doodle_h <= tile_y + tile_height/2 &&
-			x + doodle_w - 10 >= tile_x && x + 10 <= tile_x + tile_width && velocity_y > 0)
+			x + doodle_w >= tile_x && x <= tile_x + tile_width && velocity_y > 0)
 		{
 			velocity_x = 0;
+			jump.play();
 			velocity_y = -900;
 		}
 		else
@@ -44,7 +45,10 @@ void update_position(void)
 	}
 
 	if (y > W_Height)
+	{
+		fall.play();
 		game_state = 2;
+	}
 }
 
 void update_movement(void)
@@ -61,10 +65,18 @@ void update_movement(void)
 	}
 
 	if (Keyboard::isKeyPressed(Keyboard::Enter))
+	{
 		if (game_state == 0)
+		{
+			s_start.play();
 			game_state = 1;
+		}
 		else if (game_state == 2)
+		{
+			fall.stop();
 			game_state = 0;
+		}
+	}
 
 }
 
@@ -104,4 +116,23 @@ void update_tiles(void)
 			tiles[i].setPosition(px, py);
 		}
 	}
+}
+
+void update_mouse_menu(void)
+{
+	float bx = Play.getPosition().x;
+	float by = Play.getPosition().y;
+	float b_w = Play.getGlobalBounds().width;
+	float b_h = Play.getGlobalBounds().height;
+
+	Play.setTexture(play_b);
+
+	int hot = mx > bx && mx < bx + b_w &&
+		my > by && my < by + b_h;
+
+	if (hot)
+		Play.setTexture(play_b_on);
+
+	if (hot && Mouse::isButtonPressed(Mouse::Button::Left))
+		game_state = 0;
 }

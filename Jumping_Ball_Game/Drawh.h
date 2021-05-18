@@ -24,6 +24,12 @@ void draw_sprites(RenderWindow &thisWindow)
 	thisWindow.draw(Doodle);
 }
 
+void draw_menu_screen(RenderWindow &thisWindow)
+{
+	thisWindow.draw(Menu);
+	thisWindow.draw(Play);
+}
+
 void draw_texts(RenderWindow &thisWindow)
 {
 	thisWindow.draw(tip);

@@ -14,6 +14,7 @@ int main()
 	set_window();
 	init_sprites();
 	init_texts();
+	init_sounds();
 
 	while (window.isOpen())
 	{
@@ -34,24 +35,30 @@ int main()
 			}
 		}
 
+		//updates 
 		std::stringstream s;
 		s << score;
 		score_number.setString(s.str());
 
+		mx = Mouse::getPosition(window).x;
+		my = Mouse::getPosition(window).y;
+
 		if (game_state == 0 && executed == false)
 			start();
 
-		if (game_state == 1)
+		if (game_state == 3)
+			update_mouse_menu();
+		else if (game_state == 1)
 		{
 			executed = false;
 			update_tiles();
-			//update_tile_speed();
 			update_position();
 			Doodle.setPosition(x, y);
 		}
 		
 
 
+		//draw functions
 		window.clear();
 
 		draw_sprites(window);
@@ -62,10 +69,17 @@ int main()
 			window.draw(next);
 			window.draw(over);
 		}
+		else if (game_state == 0)
+			window.draw(next);
 		
 		draw_player(window);
 		draw_tiles(window);
 		draw_window(window);
+
+		//the menu screen on top
+		if (game_state == 3)
+			draw_menu_screen(window);
+
 
 		window.display();
 	}
