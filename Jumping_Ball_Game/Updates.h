@@ -48,6 +48,9 @@ void update_position(void)
 	{
 		fall.play();
 		game_state = 2;
+		score_number.setPosition(550, 300);
+		score_number.setFont(comic_sans);
+		score_number.setFillColor(Color::Black);
 	}
 }
 
@@ -71,11 +74,8 @@ void update_movement(void)
 			s_start.play();
 			game_state = 1;
 		}
-		else if (game_state == 2)
-		{
-			fall.stop();
-			game_state = 0;
-		}
+		else if (game_state == 3)
+			draw_help = false;
 	}
 
 }
@@ -126,15 +126,44 @@ void update_mouse_menu(void)
 	float b_w = Play.getGlobalBounds().width;
 	float b_h = Play.getGlobalBounds().height;
 
+	help.setFillColor(Color::Black);
 	Play.setTexture(play_b);
 
 	int hot = mx > bx && mx < bx + b_w &&
 		my > by && my < by + b_h;
-
 	if (hot)
 		Play.setTexture(play_b_on);
-
 	if (hot && Mouse::isButtonPressed(Mouse::Button::Left))
+	{
+		Collect.play();
+		game_state = 0;
+	}
+
+	int hot_2 = mx > 640 && mx < 740 &&
+		my > 505 && my < 555;
+	if (hot_2)
+		help.setFillColor(Color::Blue);
+	if (hot_2 && Mouse::isButtonPressed(Mouse::Button::Left))
+		draw_help = true;
+}
+
+void update_mouse_over(void)
+{
+	int hot = mx > 260 && mx < 550 &&
+		my > 550 && my < 600;
+	if (hot)
+		draw_menu = true;
+	if (hot && Mouse::isButtonPressed(Mouse::Button::Left))
+	{
+		Collect.play();
+		game_state = 3;
+	}
+		
+	int hot_r = mx > 260 && mx < 550 &&
+		my > 455 && my < 505;
+	if (hot_r)
+		draw_replay = true;
+	if (hot_r && Mouse::isButtonPressed(Mouse::Button::Left))
 	{
 		Collect.play();
 		game_state = 0;
@@ -212,8 +241,10 @@ void update_pickups(void)
 			}
 
 			if (spawnd == true)
-				spawn_time += 15;
+				spawn_time += 20;
 			spawnd = false;
 		}
 	}
 }
+
+

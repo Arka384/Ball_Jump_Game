@@ -7,6 +7,10 @@ void set_window(void)
 	line.setFillColor(Color(139, 69, 19, 255));
 	line.setSize(Vector2f(10, W_Height));
 	line.setPosition(W_Width, 0);
+
+	line_2.setFillColor(Color::Black);
+	line_2.setSize(Vector2f(10, W_Height));
+	line_2.setPosition(Window_Width/2 - 5, 0);
 }
 
 void init_texts(void)
@@ -55,6 +59,15 @@ void init_texts(void)
 	over.setPosition(W_Width + 20, W_Height / 2 - 100);
 	next.setPosition(W_Width + 40, W_Height / 2 - 30);
 
+	help.setFont(comic_sans);
+	help.setCharacterSize(40);
+	help.setFillColor(Color::Black);
+	help.setString("Help");
+	help.setPosition(650, 500);
+	help_back.setSize(Vector2f(100, 50));
+	help_back.setFillColor(Color(0,0,0,0));
+	help_back.setPosition(640, 505);
+
 }
 
 void init_sprites(void)
@@ -94,6 +107,29 @@ void init_sprites(void)
 	Jet_off.setScale(Vector2f(0.8, 0.8));
 	Jet_on.setScale(Vector2f(0.8, 0.8));
 
+	//over screen 
+	over_screen.loadFromFile("Images/game-over.jpg");
+	Over.setTexture(over_screen);
+	Over.setScale(Vector2f(1.45, 0.8));
+
+	menu_on.loadFromFile("Images/menu-on.png");
+	Menu_on.setTexture(menu_on);
+	Menu_on.setScale(Vector2f(1.3, 0.7));
+	Menu_on.setPosition(264, 544);
+
+	replay.loadFromFile("Images/replay.png");
+	Replay.setTexture(replay);
+	Replay.setScale(Vector2f(1.5, 0.8));
+	Replay.setPosition(260, 453);
+
+	//help images
+	help_1.loadFromFile("Images/help_1.jpg");
+	help_2.loadFromFile("Images/help_2.jpg");
+	Help_1.setTexture(help_1);
+	Help_2.setTexture(help_2);
+	Help_1.setScale(Vector2f(1.12, 1.12));
+	Help_2.setScale(Vector2f(1.12, 1.12));
+	Help_2.setPosition(Window_Width/2, 0);
 }
 
 void init_sounds(void)
@@ -174,6 +210,9 @@ void init_shapes(void)
 void start(void)
 {
 	last_tile_y = W_Height - 50;
+	score_number.setPosition(W_Width + 180, 10);
+	score_number.setFont(flappy);
+	score_number.setFillColor(Color::White);
 	x = W_Width / 2 - doodle_w / 2, y = W_Height / 2 - doodle_h / 2;
 	velocity_x = 0;
 	velocity_y = 0;
@@ -184,8 +223,9 @@ void start(void)
 	score = 0;
 	timer = 0;
 	move_speed = 120;
-	spawn_time = 5;
+	spawn_time = 10;
 	spawner = false;
+	draw_help = false;
 	executed = true;
 }
 

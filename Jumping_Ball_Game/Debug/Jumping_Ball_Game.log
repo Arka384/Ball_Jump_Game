@@ -1,38 +1,63 @@
 ﻿  main.cpp
-c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(64): warning C4305: 'argument': truncation from 'double' to 'T'
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(77): warning C4305: 'argument': truncation from 'double' to 'T'
           with
           [
               T=float
           ]
-c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(68): warning C4305: 'argument': truncation from 'double' to 'T'
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(81): warning C4305: 'argument': truncation from 'double' to 'T'
           with
           [
               T=float
           ]
-c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(94): warning C4305: 'argument': truncation from 'double' to 'T'
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(107): warning C4305: 'argument': truncation from 'double' to 'T'
           with
           [
               T=float
           ]
-c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(95): warning C4305: 'argument': truncation from 'double' to 'T'
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(108): warning C4305: 'argument': truncation from 'double' to 'T'
           with
           [
               T=float
           ]
-c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(125): warning C4305: 'argument': truncation from 'double' to 'T'
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(113): warning C4305: 'argument': truncation from 'double' to 'T'
           with
           [
               T=float
           ]
-c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(140): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(141): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(144): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(148): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(149): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(152): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(165): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(166): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(170): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(117): warning C4305: 'argument': truncation from 'double' to 'T'
+          with
+          [
+              T=float
+          ]
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(122): warning C4305: 'argument': truncation from 'double' to 'T'
+          with
+          [
+              T=float
+          ]
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(130): warning C4305: 'argument': truncation from 'double' to 'T'
+          with
+          [
+              T=float
+          ]
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(131): warning C4305: 'argument': truncation from 'double' to 'T'
+          with
+          [
+              T=float
+          ]
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(160): warning C4305: 'argument': truncation from 'double' to 'T'
+          with
+          [
+              T=float
+          ]
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(175): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(176): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(179): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(183): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(184): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(187): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(200): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(201): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\init.h(205): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\updates.h(87): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\updates.h(97): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
 c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\updates.h(98): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
@@ -40,19 +65,19 @@ c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_
 c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\updates.h(102): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\updates.h(115): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\updates.h(116): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\updates.h(150): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\updates.h(179): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\updates.h(152): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\updates.h(181): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\main.cpp(9): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\main.cpp(43): warning C4244: '=': conversion from 'T' to 'float', possible loss of data
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\main.cpp(44): warning C4244: '=': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=int
           ]
-c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\main.cpp(44): warning C4244: '=': conversion from 'T' to 'float', possible loss of data
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\projects\jumping_ball_game\jumping_ball_game\main.cpp(45): warning C4244: '=': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=int

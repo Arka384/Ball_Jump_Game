@@ -28,6 +28,31 @@ void draw_menu_screen(RenderWindow &thisWindow)
 {
 	thisWindow.draw(Menu);
 	thisWindow.draw(Play);
+	thisWindow.draw(help_back);
+	thisWindow.draw(help);
+
+	if (draw_help)
+	{
+		thisWindow.draw(Help_1);
+		thisWindow.draw(Help_2);
+		thisWindow.draw(line_2);
+	}
+}
+
+void draw_over_screen(RenderWindow &thisWindow)
+{
+	thisWindow.draw(Over);
+	thisWindow.draw(score_number);
+	if (draw_menu)
+	{
+		thisWindow.draw(Menu_on);
+		draw_menu = false;
+	}
+	if (draw_replay)
+	{
+		thisWindow.draw(Replay);
+		draw_replay = false;
+	}
 }
 
 void draw_texts(RenderWindow &thisWindow)
