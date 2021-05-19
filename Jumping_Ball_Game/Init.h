@@ -42,13 +42,13 @@ void init_texts(void)
 	tip.setString("Tip: ");
 	tips[0].setString("Use the momentum for");
 	tips[1].setString("higher jumps");
-	//tips[2].setString("Pressing arrow keys");
+	tips[2].setString("Try not to stop");
 	//tips[3].setString("multiple times will help");
 
 	tip.setPosition(W_Width + 20, W_Height - 200);
 	tips[0].setPosition(W_Width + 20, W_Height - 150);
 	tips[1].setPosition(W_Width + 30, W_Height - 130);
-	//tips[2].setPosition(W_Width + 20, W_Height - 90);
+	tips[2].setPosition(W_Width + 20, W_Height - 90);
 	//tips[3].setPosition(W_Width + 30, W_Height - 70);
 	score_text.setPosition(W_Width + 20, 10);
 	score_number.setPosition(W_Width + 180, 10);
@@ -83,7 +83,17 @@ void init_sprites(void)
 	play_b_on.setSmooth(true);
 	Play.setScale(Vector2f(1.5, 1.5));
 	Play.setPosition(W_Width/2 + 100, W_Height/2 - 80);
-	
+
+	//jetpack sprites
+	jet_off.loadFromFile("Images/jetpack_off.png");
+	jet_on.loadFromFile("Images/jetpack_on.png");
+	jet_new.loadFromFile("Images/jet.png");
+	Jet_new.setTexture(jet_new);
+	Jet_off.setTexture(jet_off);
+	Jet_on.setTexture(jet_on);
+	Jet_off.setScale(Vector2f(0.8, 0.8));
+	Jet_on.setScale(Vector2f(0.8, 0.8));
+
 }
 
 void init_sounds(void)
@@ -99,6 +109,12 @@ void init_sounds(void)
 	fall_sound.loadFromFile("Sounds/pada.wav");
 	fall.setBuffer(fall_sound);
 	fall.setVolume(50.f);
+
+	jetpack.loadFromFile("Sounds/Jetpack.wav");
+	JetPack.setBuffer(jetpack);
+
+	collect.loadFromFile("Sounds/collect.wav");
+	Collect.setBuffer(collect);
 }
 
 void init_shapes(void)
@@ -142,7 +158,7 @@ void init_shapes(void)
 		else if (px < 0)
 		{
 			px = 0;
-			px += tile_width;
+			px = rand() % W_Width / 2;
 		}
 
 		last_tile_y = py;
@@ -166,6 +182,10 @@ void start(void)
 	gravity = 200;
 	init_shapes();
 	score = 0;
+	timer = 0;
+	move_speed = 120;
+	spawn_time = 5;
+	spawner = false;
 	executed = true;
 }
 

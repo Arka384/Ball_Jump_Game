@@ -54,6 +54,9 @@ int main()
 			update_tiles();
 			update_position();
 			Doodle.setPosition(x, y);
+			spwan_pickups();
+			if(spawner == true)
+				update_pickups();
 		}
 		
 
@@ -72,9 +75,16 @@ int main()
 		else if (game_state == 0)
 			window.draw(next);
 		
-		draw_player(window);
 		draw_tiles(window);
 		draw_window(window);
+		draw_player(window);
+		
+		if (game_state == 1 && spawner == true && collided == false)
+			window.draw(Jet_new);
+		else if (game_state == 1 && spawner == true && collided == true && jet_time_counter < 5)
+			window.draw(Jet_on);
+		else if (game_state == 1 && spawner == true && collided == true && jet_time_counter < 7)
+			window.draw(Jet_off);
 
 		//the menu screen on top
 		if (game_state == 3)

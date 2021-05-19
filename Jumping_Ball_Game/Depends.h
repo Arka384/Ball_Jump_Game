@@ -12,15 +12,19 @@ constexpr int W_Width = 500;
 constexpr int W_Height = 700;
 constexpr int tile_width = 80;
 constexpr int tile_height = 20;
-constexpr int n_tiles = 15;
+constexpr int n_tiles = 12;
 RectangleShape tiles[n_tiles];
 RectangleShape line;
 float tile_gap_y = 60;
-float tile_gap_x = 300;
+float tile_gap_x = 500;
 float last_tile_y = W_Height - 50;
 float last_tile_x;
+float jet_time_counter;
 int move_speed = 120;
 bool executed = false;
+bool spawner = false;
+bool spawnd = false;
+bool collided = false;
 int score = 0;
 int game_state = 3;
 	//0 - start
@@ -40,7 +44,7 @@ float gravity = 200;
 //other 
 Clock cl;
 Time t;
-float dt;
+float dt, timer = 0, spawn_time = 10;
 Text score_text, score_number;
 Text tip, tips[4];
 Text over, next;
@@ -50,12 +54,13 @@ float mx, my;
 
 //textrures
 Texture background, doodle, doodle_2, bottom, platform, main_menu;
-Texture play_b, play_b_on, over_score_img;
-Sprite Background, Bottom, Doodle, Menu, Play, score_bck;
+Texture play_b, play_b_on, over_score_img, jet_off, jet_on, jet_new;
+Sprite Background, Bottom, Doodle, Menu, Play, score_bck, Jet_on, Jet_off, Jet_new;
 
 //sounds
-SoundBuffer jump_sound, fall_sound, start_sound;
-Sound jump, fall, s_start;
+SoundBuffer jump_sound, fall_sound, start_sound ,jetpack, collect;
+Sound jump, fall, s_start, JetPack, Collect;
+
 
 
 void init_shapes(void);
@@ -69,6 +74,8 @@ void update_position(void);
 void update_movement(void);
 void update_tiles(void);
 void update_mouse_menu(void);
+void spwan_pickups(void);
+void update_pickups(void);
 
 void draw_tiles(RenderWindow &);
 void draw_player(RenderWindow &);
