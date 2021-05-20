@@ -151,6 +151,9 @@ void init_sounds(void)
 
 	collect.loadFromFile("Sounds/collect.wav");
 	Collect.setBuffer(collect);
+
+	pause.loadFromFile("Sounds/pause.wav");
+	Pause.setBuffer(pause);
 }
 
 void init_shapes(void)

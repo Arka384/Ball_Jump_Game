@@ -56,12 +56,12 @@ void update_position(void)
 
 void update_movement(void)
 {
-	if (Keyboard::isKeyPressed(Keyboard::Right))
+	if (Keyboard::isKeyPressed(Keyboard::Right) && paused == false)
 	{
 		Doodle.setTexture(doodle_2);
 		velocity_x = 400;
 	}
-	if (Keyboard::isKeyPressed(Keyboard::Left))
+	if (Keyboard::isKeyPressed(Keyboard::Left) && paused == false)
 	{
 		Doodle.setTexture(doodle);
 		velocity_x = -400;
@@ -75,8 +75,26 @@ void update_movement(void)
 			game_state = 1;
 		}
 		else if (game_state == 3)
+		{
+			Collect.play();
 			draw_help = false;
+		}
 	}
+
+	if (Keyboard::isKeyPressed(Keyboard::Space))
+		if (game_state == 1)
+		{
+			Pause.play();
+			if (paused == false)
+				paused = true;
+			else
+				paused = false;
+
+			if (JetPack.getStatus() == Sound::Status::Playing)
+				JetPack.pause();
+			else if (JetPack.getStatus() == Sound::Status::Paused)
+				JetPack.play();
+		}
 
 }
 
@@ -144,7 +162,10 @@ void update_mouse_menu(void)
 	if (hot_2)
 		help.setFillColor(Color::Blue);
 	if (hot_2 && Mouse::isButtonPressed(Mouse::Button::Left))
+	{
+		Collect.play();
 		draw_help = true;
+	}
 }
 
 void update_mouse_over(void)

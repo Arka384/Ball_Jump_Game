@@ -28,6 +28,7 @@ bool collided = false;
 bool draw_menu = false;
 bool draw_replay = false;
 bool draw_help = false;
+bool paused = false;
 int score = 0;
 int game_state = 3;
 	//0 - start
@@ -65,8 +66,8 @@ Sprite Background, Bottom, Doodle, Menu, Play, score_bck, Jet_on, Jet_off, Jet_n
 Sprite Menu_on, Replay, Help_1, Help_2;
 
 //sounds
-SoundBuffer jump_sound, fall_sound, start_sound ,jetpack, collect;
-Sound jump, fall, s_start, JetPack, Collect;
+SoundBuffer jump_sound, fall_sound, start_sound ,jetpack, collect, pause;
+Sound jump, fall, s_start, JetPack, Collect, Pause;
 
 
 void init_shapes(void);

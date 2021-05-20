@@ -48,9 +48,9 @@ int main()
 		if (game_state == 0 && executed == false)
 			start();
 
-		if (game_state == 3)
+		if (game_state == 3 && draw_help == false)
 			update_mouse_menu();
-		else if (game_state == 1)
+		else if (game_state == 1 && paused == false)
 		{
 			executed = false;
 			update_tiles();
